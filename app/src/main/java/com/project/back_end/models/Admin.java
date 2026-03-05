@@ -28,7 +28,7 @@ public class Admin {
         return username;
     }
 
-    public void setEmail(String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
