@@ -1,0 +1,865 @@
+theia@theiadocker-eslamalfi2:/home/project$ mongosh mongodb://root:Z4NNrBsAMlSKAE15kUtodyJ9@172.21.117.113:27017
+Current Mongosh Log ID: 69aaa3e96e9c949a239dc29c
+Connecting to:          mongodb://<credentials>@172.21.117.113:27017/?directConnection=true&appName=mongosh+2.5.9
+Using MongoDB:          4.4.29
+Using Mongosh:          2.5.9
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2026-03-05T02:53:00.550+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+------
+
+test> use prescriptions
+switched to db prescriptions
+prescriptions> db.prescriptions.insertMany([
+... {
+... patientName:"John Smith",
+... appointmentId:51,
+... medication:"Paracetamol",
+... dosage:"500mg",
+... doctorNotes:"Take 1 tablet every 6 hours."
+... },
+... {
+... patientName:"Emily Rose",
+... appointmentId:52,
+... medication:"Aspirin",
+... dosage:"300mg",
+... doctorNotes:"Take 1 tablet after meals."
+... }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa3fa6e9c949a239dc29d'),
+    '1': ObjectId('69aaa3fa6e9c949a239dc29e')
+  }
+}
+prescriptions> SELECT * FROM doctor LIMIT 5;
+... SELECT * FROM doctor_available_times LIMIT 5;
+... SELECT * FROM patient LIMIT 5;
+... SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+... SELECT * FROM admin;
+Uncaught:
+SyntaxError: Missing semicolon. (1:13)
+
+> 1 | SELECT * FROM doctor LIMIT 5;
+    |              ^
+  2 | SELECT * FROM doctor_available_times LIMIT 5;
+  3 | SELECT * FROM patient LIMIT 5;
+  4 | SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+
+prescriptions> use prescriptions
+... db.prescriptions.find().limit(5).pretty()
+already on db prescriptions
+theia@theiadocker-eslamalfi2:/home/project$ mongosh mongodb://root:Z4NNrBsAMlSKAE15kUtodyJ9@172.21.117.113:27017
+Current Mongosh Log ID: 69aaa3e96e9c949a239dc29c
+Connecting to:          mongodb://<credentials>@172.21.117.113:27017/?directConnection=true&appName=mongosh+2.5.9
+Using MongoDB:          4.4.29
+Using Mongosh:          2.5.9
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2026-03-05T02:53:00.550+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+------
+
+test> use prescriptions
+switched to db prescriptions
+prescriptions> db.prescriptions.insertMany([
+... {
+... patientName:"John Smith",
+... appointmentId:51,
+... medication:"Paracetamol",
+... dosage:"500mg",
+... doctorNotes:"Take 1 tablet every 6 hours."
+... },
+... {
+... patientName:"Emily Rose",
+... appointmentId:52,
+... medication:"Aspirin",
+... dosage:"300mg",
+... doctorNotes:"Take 1 tablet after meals."
+... }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa3fa6e9c949a239dc29d'),
+    '1': ObjectId('69aaa3fa6e9c949a239dc29e')
+  }
+}
+prescriptions> SELECT * FROM doctor LIMIT 5;
+... SELECT * FROM doctor_available_times LIMIT 5;
+... SELECT * FROM patient LIMIT 5;
+... SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+... SELECT * FROM admin;
+Uncaught:
+SyntaxError: Missing semicolon. (1:13)
+
+> 1 | SELECT * FROM doctor LIMIT 5;
+    |              ^
+  2 | SELECT * FROM doctor_available_times LIMIT 5;
+  3 | SELECT * FROM patient LIMIT 5;
+  4 | SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+
+prescriptions> use prescriptions
+... db.prescriptions.find().limit(5).pretty()
+already on db prescriptions
+prescriptions> use prescriptions
+... 
+already on db prescriptions
+prescriptions> use prescriptions
+... 
+already on db prescriptions
+theia@theiadocker-eslamalfi2:/home/project$ mongosh mongodb://root:Z4NNrBsAMlSKAE15kUtodyJ9@172.21.117.113:27017
+Current Mongosh Log ID: 69aaa3e96e9c949a239dc29c
+Connecting to:          mongodb://<credentials>@172.21.117.113:27017/?directConnection=true&appName=mongosh+2.5.9
+Using MongoDB:          4.4.29
+Using Mongosh:          2.5.9
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2026-03-05T02:53:00.550+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+------
+
+test> use prescriptions
+switched to db prescriptions
+prescriptions> db.prescriptions.insertMany([
+... {
+... patientName:"John Smith",
+... appointmentId:51,
+... medication:"Paracetamol",
+... dosage:"500mg",
+... doctorNotes:"Take 1 tablet every 6 hours."
+... },
+... {
+... patientName:"Emily Rose",
+... appointmentId:52,
+... medication:"Aspirin",
+... dosage:"300mg",
+... doctorNotes:"Take 1 tablet after meals."
+... }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa3fa6e9c949a239dc29d'),
+    '1': ObjectId('69aaa3fa6e9c949a239dc29e')
+  }
+}
+prescriptions> SELECT * FROM doctor LIMIT 5;
+... SELECT * FROM doctor_available_times LIMIT 5;
+... SELECT * FROM patient LIMIT 5;
+... SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+... SELECT * FROM admin;
+Uncaught:
+SyntaxError: Missing semicolon. (1:13)
+
+> 1 | SELECT * FROM doctor LIMIT 5;
+    |              ^
+  2 | SELECT * FROM doctor_available_times LIMIT 5;
+  3 | SELECT * FROM patient LIMIT 5;
+  4 | SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+
+prescriptions> use prescriptions
+... db.prescriptions.find().limit(5).pretty()
+already on db prescriptions
+prescriptions> use prescriptions
+... 
+already on db prescriptions
+prescriptions> use prescriptions
+... 
+already on db prescriptions
+prescriptions> use prescriptions
+already on db prescriptions
+prescriptions> db.prescriptions.insertMany([
+...   {
+...     patientName: "John Smith",
+...     appointmentId: 51,
+...     medication: "Paracetamol",
+...     dosage: "500mg",
+...     doctorNotes: "Take 1 tablet every 6 hours."
+...   },
+...   {
+...     patientName: "Emily Rose",
+...     appointmentId: 52,
+...     medication: "Aspirin",
+...     dosage: "300mg",
+...     doctorNotes: "Take 1 tablet after meals."
+...   },
+...   {
+...     patientName: "Michael Jordan",
+...     appointmentId: 53,
+...     medication: "Ibuprofen",
+...     dosage: "400mg",
+...     doctorNotes: "Take 1 tablet every 8 hours."
+...   },
+...   {
+...     patientName: "Olivia Moon",
+...     appointmentId: 54,
+...     medication: "Antihistamine",
+...     dosage: "10mg",
+...     doctorNotes: "Take 1 tablet daily before bed."
+...   },
+...   {
+...     patientName: "Liam King",
+...     appointmentId: 55,
+...     medication: "Vitamin C",
+...     dosage: "1000mg",
+...     doctorNotes: "Take 1 tablet daily."
+...   }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa5eb6e9c949a239dc29f'),
+    '1': ObjectId('69aaa5eb6e9c949a239dc2a0'),
+    '2': ObjectId('69aaa5eb6e9c949a239dc2a1'),
+    '3': ObjectId('69aaa5eb6e9c949a239dc2a2'),
+    '4': ObjectId('69aaa5eb6e9c949a239dc2a3')
+  }
+}
+prescriptions> db.prescriptions.insertMany([
+...   {
+...     patientName: "John Smith",
+...     appointmentId: 51,
+...     medication: "Paracetamol",
+...     dosage: "500mg",
+...     doctorNotes: "Take 1 tablet every 6 hours."
+...   },
+...   {
+...     patientName: "Emily Rose",
+...     appointmentId: 52,
+...     medication: "Aspirin",
+...     dosage: "300mg",
+...     doctorNotes: "Take 1 tablet after meals."
+...   },
+...   {
+...     patientName: "Michael Jordan",
+...     appointmentId: 53,
+...     medication: "Ibuprofen",
+...     dosage: "400mg",
+...     doctorNotes: "Take 1 tablet every 8 hours."
+...   },
+...   {
+...     patientName: "Olivia Moon",
+...     appointmentId: 54,
+...     medication: "Antihistamine",
+...     dosage: "10mg",
+...     doctorNotes: "Take 1 tablet daily before bed."
+...   },
+...   {
+...     patientName: "Liam King",
+...     appointmentId: 55,
+...     medication: "Vitamin C",
+...     dosage: "1000mg",
+...     doctorNotes: "Take 1 tablet daily."
+...   }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa5f76e9c949a239dc2a4'),
+    '1': ObjectId('69aaa5f76e9c949a239dc2a5'),
+    '2': ObjectId('69aaa5f76e9c949a239dc2a6'),
+    '3': ObjectId('69aaa5f76e9c949a239dc2a7'),
+    '4': ObjectId('69aaa5f76e9c949a239dc2a8')
+  }
+}
+prescriptions> db.prescriptions.find().limit(5).pretty()
+[
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29d'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29e'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc29f'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a0'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a1'),
+    patientName: 'Michael Jordan',
+    appointmentId: 53,
+    medication: 'Ibuprofen',
+    dosage: '400mg',
+    doctorNotes: 'Take 1 tablet every 8 hours.'
+  }
+]
+prescriptions> db.prescriptions.find().limit(5).pretty()
+[
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29d'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29e'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc29f'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a0'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a1'),
+    patientName: 'Michael Jordan',
+    appointmentId: 53,
+    medication: 'Ibuprofen',
+    dosage: '400mg',
+    doctorNotes: 'Take 1 tablet every 8 hours.'
+  }
+]
+theia@theiadocker-eslamalfi2:/home/project$ mongosh mongodb://root:Z4NNrBsAMlSKAE15kUtodyJ9@172.21.117.113:27017
+Current Mongosh Log ID: 69aaa3e96e9c949a239dc29c
+Connecting to:          mongodb://<credentials>@172.21.117.113:27017/?directConnection=true&appName=mongosh+2.5.9
+Using MongoDB:          4.4.29
+Using Mongosh:          2.5.9
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+------
+   The server generated these startup warnings when booting
+   2026-03-05T02:53:00.550+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+------
+
+test> use prescriptions
+switched to db prescriptions
+prescriptions> db.prescriptions.insertMany([
+... {
+... patientName:"John Smith",
+... appointmentId:51,
+... medication:"Paracetamol",
+... dosage:"500mg",
+... doctorNotes:"Take 1 tablet every 6 hours."
+... },
+... {
+... patientName:"Emily Rose",
+... appointmentId:52,
+... medication:"Aspirin",
+... dosage:"300mg",
+... doctorNotes:"Take 1 tablet after meals."
+... }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa3fa6e9c949a239dc29d'),
+    '1': ObjectId('69aaa3fa6e9c949a239dc29e')
+  }
+}
+prescriptions> SELECT * FROM doctor LIMIT 5;
+... SELECT * FROM doctor_available_times LIMIT 5;
+... SELECT * FROM patient LIMIT 5;
+... SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+... SELECT * FROM admin;
+Uncaught:
+SyntaxError: Missing semicolon. (1:13)
+
+> 1 | SELECT * FROM doctor LIMIT 5;
+    |              ^
+  2 | SELECT * FROM doctor_available_times LIMIT 5;
+  3 | SELECT * FROM patient LIMIT 5;
+  4 | SELECT * FROM appointment ORDER BY appointment_time LIMIT 5;
+
+prescriptions> use prescriptions
+... db.prescriptions.find().limit(5).pretty()
+already on db prescriptions
+prescriptions> use prescriptions
+... 
+already on db prescriptions
+prescriptions> use prescriptions
+... 
+already on db prescriptions
+prescriptions> use prescriptions
+already on db prescriptions
+prescriptions> db.prescriptions.insertMany([
+...   {
+...     patientName: "John Smith",
+...     appointmentId: 51,
+...     medication: "Paracetamol",
+...     dosage: "500mg",
+...     doctorNotes: "Take 1 tablet every 6 hours."
+...   },
+...   {
+...     patientName: "Emily Rose",
+...     appointmentId: 52,
+...     medication: "Aspirin",
+...     dosage: "300mg",
+...     doctorNotes: "Take 1 tablet after meals."
+...   },
+...   {
+...     patientName: "Michael Jordan",
+...     appointmentId: 53,
+...     medication: "Ibuprofen",
+...     dosage: "400mg",
+...     doctorNotes: "Take 1 tablet every 8 hours."
+...   },
+...   {
+...     patientName: "Olivia Moon",
+...     appointmentId: 54,
+...     medication: "Antihistamine",
+...     dosage: "10mg",
+...     doctorNotes: "Take 1 tablet daily before bed."
+...   },
+...   {
+...     patientName: "Liam King",
+...     appointmentId: 55,
+...     medication: "Vitamin C",
+...     dosage: "1000mg",
+...     doctorNotes: "Take 1 tablet daily."
+...   }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa5eb6e9c949a239dc29f'),
+    '1': ObjectId('69aaa5eb6e9c949a239dc2a0'),
+    '2': ObjectId('69aaa5eb6e9c949a239dc2a1'),
+    '3': ObjectId('69aaa5eb6e9c949a239dc2a2'),
+    '4': ObjectId('69aaa5eb6e9c949a239dc2a3')
+  }
+}
+prescriptions> db.prescriptions.insertMany([
+...   {
+...     patientName: "John Smith",
+...     appointmentId: 51,
+...     medication: "Paracetamol",
+...     dosage: "500mg",
+...     doctorNotes: "Take 1 tablet every 6 hours."
+...   },
+...   {
+...     patientName: "Emily Rose",
+...     appointmentId: 52,
+...     medication: "Aspirin",
+...     dosage: "300mg",
+...     doctorNotes: "Take 1 tablet after meals."
+...   },
+...   {
+...     patientName: "Michael Jordan",
+...     appointmentId: 53,
+...     medication: "Ibuprofen",
+...     dosage: "400mg",
+...     doctorNotes: "Take 1 tablet every 8 hours."
+...   },
+...   {
+...     patientName: "Olivia Moon",
+...     appointmentId: 54,
+...     medication: "Antihistamine",
+...     dosage: "10mg",
+...     doctorNotes: "Take 1 tablet daily before bed."
+...   },
+...   {
+...     patientName: "Liam King",
+...     appointmentId: 55,
+...     medication: "Vitamin C",
+...     dosage: "1000mg",
+...     doctorNotes: "Take 1 tablet daily."
+...   }
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('69aaa5f76e9c949a239dc2a4'),
+    '1': ObjectId('69aaa5f76e9c949a239dc2a5'),
+    '2': ObjectId('69aaa5f76e9c949a239dc2a6'),
+    '3': ObjectId('69aaa5f76e9c949a239dc2a7'),
+    '4': ObjectId('69aaa5f76e9c949a239dc2a8')
+  }
+}
+prescriptions> db.prescriptions.find().limit(5).pretty()
+[
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29d'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29e'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc29f'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a0'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a1'),
+    patientName: 'Michael Jordan',
+    appointmentId: 53,
+    medication: 'Ibuprofen',
+    dosage: '400mg',
+    doctorNotes: 'Take 1 tablet every 8 hours.'
+  }
+]
+prescriptions> db.prescriptions.find().limit(5).pretty()
+[
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29d'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa3fa6e9c949a239dc29e'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc29f'),
+    patientName: 'John Smith',
+    appointmentId: 51,
+    medication: 'Paracetamol',
+    dosage: '500mg',
+    doctorNotes: 'Take 1 tablet every 6 hours.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a0'),
+    patientName: 'Emily Rose',
+    appointmentId: 52,
+    medication: 'Aspirin',
+    dosage: '300mg',
+    doctorNotes: 'Take 1 tablet after meals.'
+  },
+  {
+    _id: ObjectId('69aaa5eb6e9c949a239dc2a1'),
+    patientName: 'Michael Jordan',
+    appointmentId: 53,
+    medication: 'Ibuprofen',
+    dosage: '400mg',
+    doctorNotes: 'Take 1 tablet every 8 hours.'
+  }
+]
+prescriptions> use prescriptions;
+... 
+already on db prescriptions
+prescriptions> db.prescriptions.insertMany([
+...   {
+...   "_id": ObjectId("6807dd712725f013281e7201"),
+...   "patientName": "John Smith",
+...   "appointmentId": 51,
+...   "medication": "Paracetamol",
+...   "dosage": "500mg",
+...   "doctorNotes": "Take 1 tablet every 6 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7202"),
+...   "patientName": "Emily Rose",
+...   "appointmentId": 52,
+...   "medication": "Aspirin",
+...   "dosage": "300mg",
+...   "doctorNotes": "Take 1 tablet after meals.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7203"),
+...   "patientName": "Michael Jordan",
+...   "appointmentId": 53,
+...   "medication": "Ibuprofen",
+...   "dosage": "400mg",
+...   "doctorNotes": "Take 1 tablet every 8 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7204"),
+...   "patientName": "Olivia Moon",
+...   "appointmentId": 54,
+...   "medication": "Antihistamine",
+...   "dosage": "10mg",
+...   "doctorNotes": "Take 1 tablet daily before bed.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7205"),
+...   "patientName": "Liam King",
+...   "appointmentId": 55,
+...   "medication": "Vitamin C",
+...   "dosage": "1000mg",
+...   "doctorNotes": "Take 1 tablet daily.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7206"),
+...   "patientName": "Sophia Lane",
+...   "appointmentId": 56,
+...   "medication": "Antibiotics",
+...   "dosage": "500mg",
+...   "doctorNotes": "Take 1 tablet every 12 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7207"),
+...   "patientName": "Noah Brooks",
+...   "appointmentId": 57,
+...   "medication": "Paracetamol",
+...   "dosage": "500mg",
+...   "doctorNotes": "Take 1 tablet every 6 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7208"),
+...   "patientName": "Ava Daniels",
+...   "appointmentId": 58,
+...   "medication": "Ibuprofen",
+...   "dosage": "200mg",
+...   "doctorNotes": "Take 1 tablet every 8 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7209"),
+...   "patientName": "William Harris",
+...   "appointmentId": 59,
+...   "medication": "Aspirin",
+...   "dosage": "300mg",
+...   "doctorNotes": "Take 1 tablet after meals.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7210"),
+...   "patientName": "Mia Green",
+...   "appointmentId": 60,
+...   "medication": "Vitamin D",
+...   "dosage": "1000 IU",
+...   "doctorNotes": "Take 1 tablet daily with food.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7211"),
+...   "patientName": "James Brown",
+...   "appointmentId": 61,
+...   "medication": "Antihistamine",
+...   "dosage": "10mg",
+...   "doctorNotes": "Take 1 tablet every morning.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7212"),
+...   "patientName": "Amelia Clark",
+...   "appointmentId": 62,
+...   "medication": "Paracetamol",
+...   "dosage": "500mg",
+...   "doctorNotes": "Take 1 tablet every 6 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7213"),
+...   "patientName": "Ben Johnson",
+...   "appointmentId": 63,
+...   "medication": "Ibuprofen",
+...   "dosage": "400mg",
+...   "doctorNotes": "Take 1 tablet every 8 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7214"),
+...   "patientName": "Ella Monroe",
+...   "appointmentId": 64,
+...   "medication": "Vitamin C",
+...   "dosage": "1000mg",
+...   "doctorNotes": "Take 1 tablet daily.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7215"),
+...   "patientName": "Lucas Turner",
+...   "appointmentId": 65,
+...   "medication": "Aspirin",
+...   "dosage": "300mg",
+...   "doctorNotes": "Take 1 tablet after meals.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7216"),
+...   "patientName": "Grace Scott",
+...   "appointmentId": 66,
+...   "medication": "Paracetamol",
+...   "dosage": "500mg",
+...   "doctorNotes": "Take 1 tablet every 6 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7217"),
+...   "patientName": "Ethan Hill",
+...   "appointmentId": 67,
+...   "medication": "Ibuprofen",
+...   "dosage": "400mg",
+...   "doctorNotes": "Take 1 tablet every 8 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7218"),
+...   "patientName": "Ruby Ward",
+...   "appointmentId": 68,
+...   "medication": "Vitamin D",
+...   "dosage": "1000 IU",
+...   "doctorNotes": "Take 1 tablet daily with food.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7219"),
+...   "patientName": "Jack Baker",
+...   "appointmentId": 69,
+...   "medication": "Antibiotics",
+...   "dosage": "500mg",
+...   "doctorNotes": "Take 1 tablet every 12 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7220"),
+...   "patientName": "Mia Hall",
+...   "appointmentId": 70,
+...   "medication": "Paracetamol",
+...   "dosage": "500mg",
+...   "doctorNotes": "Take 1 tablet every 6 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7221"),
+...   "patientName": "Owen Thomas",
+...   "appointmentId": 71,
+...   "medication": "Ibuprofen",
+...   "dosage": "200mg",
+...   "doctorNotes": "Take 1 tablet every 8 hours.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7222"),
+...   "patientName": "Ivy Jackson",
+...   "appointmentId": 72,
+...   "medication": "Antihistamine",
+...   "dosage": "10mg",
+...   "doctorNotes": "Take 1 tablet every morning.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7223"),
+...   "patientName": "Leo Martin",
+...   "appointmentId": 73,
+...   "medication": "Vitamin C",
+...   "dosage": "1000mg",
+...   "doctorNotes": "Take 1 tablet daily.",
+...   "_class": "com.project.back_end.models.Prescription"
+... },
+... {
+...   "_id": ObjectId("6807dd712725f013281e7224"),
+...   "patientName": "Ella Moore",
+...   "appointmentId": 74,
+...   "medication": "Aspirin",
+...   "dosage": "300mg",
+...   "doctorNotes": "Take 1 tablet after meals.",
+...   "_class": "com.project.back_end.models.Prescription"
+... }
+... ]);
+... use prescriptions;
+... db.prescriptions.find().limit(5).pretty();
+... 
+Uncaught:
+SyntaxError: Missing semicolon. (219:3)
+
+  217 | }
+  218 | ]);
+> 219 | use prescriptions;
+      |    ^
+  220 | db.prescriptions.find().limit(5).pretty();
+  221 |
+  222 |
+
+prescriptions> use prescriptions;
+... db.prescriptions.find().limit(5).pretty();
+... 
+switched to db prescriptions;
+prescriptions;> use prescriptions;
+... db.prescriptions.find().limit(5).pretty();
+... 
+already on db prescriptions;
+prescriptions;> db.prescriptions.find().limit(5).pretty();
+... 
+
+prescriptions;> 
