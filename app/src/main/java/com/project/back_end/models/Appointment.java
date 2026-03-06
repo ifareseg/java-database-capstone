@@ -1,19 +1,12 @@
 package com.project.back_end.models;
 
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
-
 
 @Entity
 public class Appointment {
@@ -23,25 +16,21 @@ public class Appointment {
     private Long id;
 
     @ManyToOne
-    @NotNull(message = "Doctor must be assigned to the appointment")
+    @NotNull
     private Doctor doctor;
 
     @ManyToOne
-    @NotNull(message = "Patient must be assigned to the appointment")
+    @NotNull
     private Patient patient;
 
     @Future(message = "Appointment time must be in the future")
-    private LocalDateTime appointmentTime;  // The time when the appointment is scheduled
+    private LocalDateTime appointmentTime;
 
-    @Transient
-    public LocalDateTime getEndTime() {
-        return appointmentTime != null ? appointmentTime.plusHours(1) : null;
-    }
-    
-    @NotNull(message = "Status cannot be null")
-    private int status;  // Status can be "Scheduled:0", "Completed:1"
+    @NotNull
+    private int status; // 0 = Scheduled, 1 = Completed
 
     // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -82,14 +71,20 @@ public class Appointment {
         this.status = status;
     }
 
-     // Getter for LocalDate (only the date part, no time)
+    // Helper Methods
+
+    @Transient
+    public LocalDateTime getEndTime() {
+        return appointmentTime != null ? appointmentTime.plusHours(1) : null;
+    }
+
+    @Transient
     public LocalDate getAppointmentDate() {
         return appointmentTime != null ? appointmentTime.toLocalDate() : null;
     }
 
-    // Getter for LocalTime (only the time part, no date)
+    @Transient
     public LocalTime getAppointmentTimeOnly() {
-        return appointmentTime != null ? appointmentTime.toLocalTime() : null;  // Extracts only the time
+        return appointmentTime != null ? appointmentTime.toLocalTime() : null;
     }
 }
-
