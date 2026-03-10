@@ -1,63 +1,99 @@
 /* doctorDashboard.css */
+/* doctorDashboard.css */
 .table-header {
-  font-size: 24px;
-  color: #015c5d;
-
-  margin-bottom: 30px;
-  margin-right: 0px;
+  background-color: rgba(1, 92, 93, 0.9);
+  color: #fff;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   margin-top: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 12px;
+  overflow: hidden;
 }
+
 thead {
-  background-color: #33333310;
+  background-color: rgba(1, 92, 93, 0.9);
   color: #fff;
 }
+
 td,
 th {
   padding: 12px 16px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
+
 tbody tr:nth-child(even) {
   background-color: #f9f9f959;
 }
+
 tbody tr:nth-child(odd) {
   background-color: #ffffffc0;
 }
+
 tbody tr:hover {
   background-color: #015c5d39;
 }
+
 .prescription-btn {
-  width: 30px;
-  height: 30px;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
   transition: transform 0.2s ease, filter 0.2s ease;
 }
+
 .prescription-btn:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+  transform: scale(1.08);
+  filter: brightness(1.15);
 }
+
 .prescription-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
+
 .noPatientRecord {
   font-size: 16px;
   color: gray;
   font-style: italic;
+  text-align: center;
 }
+
 .today-btn {
-  margin-right: 10px;
-  padding: 10px;
+  padding: 10px 14px;
   background-color: #015c5d;
-}
-.date-picker {
-  margin-left: 10px;
   border-radius: 8px;
-  padding: 10px;
-  height: 30px;
-  margin-top: 13px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.today-btn:hover {
+  background-color: #017d7e;
+}
+
+.date-picker {
+  border-radius: 8px;
+  padding: 10px 12px;
+  min-height: 42px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  td,
+  th {
+    padding: 10px;
+  }
 }

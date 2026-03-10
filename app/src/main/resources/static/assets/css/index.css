@@ -1,0 +1,103 @@
+/* index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f7fb;
+  color: #1f2937;
+}
+
+.container {
+  min-height: 100vh;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(255,255,255,0.25), rgba(255,255,255,0.25)),
+    url("../images/defineRole/index.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.role-box {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.role-box h2 {
+  font-size: 2.25rem;
+  margin-bottom: 28px;
+  color: #003e3e;
+  font-weight: 800;
+  font-family: "Alegreya", "Roboto", sans-serif;
+}
+
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+}
+
+.role-buttons button {
+  width: 240px;
+  max-width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: #015c5d;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.role-buttons button:hover {
+  background-color: #003e3e;
+  transform: translateY(-1px);
+}
+
+.role-buttons button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 24px 16px;
+  }
+
+  .role-box {
+    padding: 28px 20px;
+  }
+
+  .role-box h2 {
+    font-size: 1.8rem;
+  }
+}

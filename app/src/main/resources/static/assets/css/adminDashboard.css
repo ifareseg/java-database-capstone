@@ -1,60 +1,76 @@
 /* adminDashboard CSS */
+/* adminDashboard.css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }  
-  html, body {
-    height: 100%;
-    font-family: Arial, sans-serif;
-  
-  }  
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }  
-  h2 {
-    font-size: 32px;
-    margin-bottom: 50px;
-    color : #003e3e;
-  }  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-image: linear-gradient(rgba(255,255,255,0.70), rgba(255,255,255,0.70)),
+    url("../images/defineRole/index.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.main-content h2 {
+  font-size: 32px;
+  margin-bottom: 24px;
+  color: #003e3e;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.searchBar {
+  width: 100%;
+  max-width: 420px;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  gap: 24px;
+  padding: 10px 0 20px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-content .dashboard-btn {
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
   .main-content {
-    flex-grow: 1; 
-    padding: 40px;
-    display: flex;
-    
-    flex-direction: column;
-    text-align: center;
-    background-image: url("../images/defineRole/defineRole.png");
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
-    
-  }  
-  button {
-    background-color: #A62B1F;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 200px;
-  }  
-  button:hover {
-    background-color: #A62B1F; 
+    padding: 24px 16px;
   }
-  .adminBtn {    
-    color: #333;
-    font-weight: bold;
-    background-color: #f4f4f4;
-    width:110px;
-    padding : 10px 0px;
-  }
-  .adminBtn:hover{
-    color: #A62B1F;
-    background-color: #f4f4f4;
-  }
+}

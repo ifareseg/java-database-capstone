@@ -1,270 +1,223 @@
+# User Stories – Smart Clinic Management System
+
+This document defines the user stories for the Smart Clinic portal.  
+The system supports three primary roles: Admin, Doctor, and Patient.
+
+---
+
 # User Story Template
 
-**Title:** Admin Login
+**Title:**  
+_As a [user role], I want [feature/goal], so that [reason]._
 
+**Acceptance Criteria:**
+1. [Criteria 1]
+2. [Criteria 2]
+3. [Criteria 3]
+
+**Priority:** [High/Medium/Low]  
+**Story Points:** [Estimated Effort in Points]
+
+**Notes:**
+- [Additional information or edge cases]
+
+---
+
+## Admin User Stories
+
+### Title: Admin Login
 _As an admin, I want to log into the portal using my username and password so that I can securely manage the platform._
 
-**Acceptance Criteria:**
-1. Admin enters username and password.
+**Acceptance Criteria**
+1. Admin can enter username and password.
 2. System validates credentials.
-3. Admin is redirected to the admin dashboard.
+3. Admin is redirected to the admin dashboard after successful login.
 
 **Priority:** High  
-**Story Points:** 3  
-
-**Notes:**
-- Use secure authentication.
-
+**Story Points:** 3
 
 ---
 
-**Title:** Admin Logout
+### Title: Admin Logout
+_As an admin, I want to log out of the portal so that I can protect the system from unauthorized access._
 
-_As an admin, I want to log out of the portal so that I can protect system access._
-
-**Acceptance Criteria:**
-1. Admin clicks logout.
-2. Session is terminated.
-3. Admin is redirected to login page.
-
-**Priority:** Medium  
-**Story Points:** 2  
-
-**Notes:**
-- Ensure session security.
-
-
----
-
-**Title:** Add Doctor Profile
-
-_As an admin, I want to add doctors to the portal so that patients can book appointments._
-
-**Acceptance Criteria:**
-1. Admin enters doctor details.
-2. Doctor information is stored in the database.
-3. Doctor appears in the doctor list.
+**Acceptance Criteria**
+1. Admin can click logout.
+2. Session is cleared.
+3. Admin is redirected to the homepage.
 
 **Priority:** High  
-**Story Points:** 4  
-
-**Notes:**
-- Validate required fields.
-
+**Story Points:** 2
 
 ---
 
-**Title:** Delete Doctor Profile
+### Title: Add Doctor
+_As an admin, I want to add a doctor profile so that the doctor can start receiving appointments._
 
-_As an admin, I want to delete a doctor profile from the portal so that outdated profiles are removed._
+**Acceptance Criteria**
+1. Admin can enter doctor details.
+2. Doctor record is saved in the database.
+3. Doctor appears in the doctors list.
 
-**Acceptance Criteria:**
-1. Admin selects a doctor profile.
+**Priority:** High  
+**Story Points:** 5
+
+---
+
+### Title: Delete Doctor
+_As an admin, I want to remove a doctor from the portal so that outdated or inactive profiles are removed._
+
+**Acceptance Criteria**
+1. Admin can select a doctor.
 2. Admin confirms deletion.
 3. Doctor profile is removed from the system.
 
 **Priority:** Medium  
-**Story Points:** 3  
-
-**Notes:**
-- Prevent accidental deletion.
-
+**Story Points:** 3
 
 ---
 
-**Title:** Generate Monthly Appointment Report
+### Title: View Appointment Statistics
+_As an admin, I want to run a stored procedure to view the number of appointments per month so that I can track clinic usage._
 
-_As an admin, I want to run a stored procedure to view the number of appointments per month so that I can track system usage._
-
-**Acceptance Criteria:**
-1. Admin runs stored procedure in MySQL.
-2. System returns monthly appointment count.
-3. Results are displayed in the admin dashboard.
-
-**Priority:** Medium  
-**Story Points:** 4  
-
-**Notes:**
-- Ensure accurate database reporting.
-
-
-
-# Patient User Stories
-
-**Title:** View Doctors Without Login
-
-_As a patient, I want to view the list of doctors without logging in so that I can explore options._
-
-**Acceptance Criteria:**
-1. Patient opens the portal.
-2. System displays available doctors.
-3. No login required.
+**Acceptance Criteria**
+1. Admin runs the stored procedure from MySQL CLI.
+2. System calculates total appointments per month.
+3. Results are displayed correctly.
 
 **Priority:** Medium  
-**Story Points:** 2  
-
-**Notes:**
-- Display doctor specialization.
-
+**Story Points:** 3
 
 ---
 
-**Title:** Patient Sign Up
+## Patient User Stories
 
-_As a patient, I want to sign up using my email and password so that I can book appointments._
+### Title: View Doctors Without Login
+_As a patient, I want to view a list of doctors without logging in so that I can explore available options._
 
-**Acceptance Criteria:**
+**Acceptance Criteria**
+1. Patient can access doctor list from homepage.
+2. Doctor name and specialty are visible.
+3. Login is not required.
+
+**Priority:** Medium  
+**Story Points:** 2
+
+---
+
+### Title: Patient Sign Up
+_As a patient, I want to register using my email and password so that I can book appointments._
+
+**Acceptance Criteria**
 1. Patient enters email and password.
 2. System validates input.
 3. Account is created successfully.
 
 **Priority:** High  
-**Story Points:** 4  
-
-**Notes:**
-- Email must be unique.
-
+**Story Points:** 5
 
 ---
 
-**Title:** Patient Login
+### Title: Patient Login
+_As a patient, I want to log into the portal so that I can manage my appointments._
 
-_As a patient, I want to log into the portal so that I can manage my bookings._
-
-**Acceptance Criteria:**
-1. Patient enters login credentials.
-2. System verifies credentials.
-3. Patient dashboard opens.
+**Acceptance Criteria**
+1. Patient enters credentials.
+2. System verifies login.
+3. Patient dashboard loads.
 
 **Priority:** High  
-**Story Points:** 3  
-
-**Notes:**
-- Use secure authentication.
-
+**Story Points:** 3
 
 ---
 
-**Title:** Book Appointment
-
+### Title: Book Appointment
 _As a patient, I want to book an appointment with a doctor so that I can receive medical consultation._
 
-**Acceptance Criteria:**
+**Acceptance Criteria**
 1. Patient selects doctor.
-2. Patient chooses available time slot.
-3. Appointment is confirmed.
+2. Patient selects available time slot.
+3. Appointment is saved in the system.
 
 **Priority:** High  
-**Story Points:** 5  
-
-**Notes:**
-- Prevent double booking.
-
+**Story Points:** 5
 
 ---
 
-**Title:** View Upcoming Appointments
+### Title: View Upcoming Appointments
+_As a patient, I want to view my upcoming appointments so that I can prepare for my visit._
 
-_As a patient, I want to view my upcoming appointments so that I can prepare accordingly._
-
-**Acceptance Criteria:**
-1. Patient logs into the portal.
-2. System displays upcoming appointments.
-3. Appointment details are visible.
+**Acceptance Criteria**
+1. Patient dashboard displays appointments.
+2. Appointment date and doctor name are shown.
+3. Patient can review appointment details.
 
 **Priority:** Medium  
-**Story Points:** 3  
+**Story Points:** 3
 
-**Notes:**
-- Include date and doctor details.
+---
 
+## Doctor User Stories
 
-
-# Doctor User Stories
-
-**Title:** Doctor Login
-
+### Title: Doctor Login
 _As a doctor, I want to log into the portal so that I can manage my appointments._
 
-**Acceptance Criteria:**
-1. Doctor enters login credentials.
-2. System validates credentials.
-3. Doctor dashboard opens.
+**Acceptance Criteria**
+1. Doctor enters credentials.
+2. System verifies login.
+3. Doctor dashboard loads.
 
 **Priority:** High  
-**Story Points:** 3  
-
-**Notes:**
-- Secure authentication required.
-
+**Story Points:** 3
 
 ---
 
-**Title:** Doctor Logout
+### Title: Doctor Logout
+_As a doctor, I want to log out so that my session remains secure._
 
-_As a doctor, I want to log out of the portal so that my account remains secure._
-
-**Acceptance Criteria:**
+**Acceptance Criteria**
 1. Doctor clicks logout.
-2. Session is terminated.
-3. Doctor is redirected to login page.
+2. Session ends.
+3. Doctor is redirected to homepage.
 
 **Priority:** Medium  
-**Story Points:** 2  
-
-**Notes:**
-- Protect session data.
-
+**Story Points:** 2
 
 ---
 
-**Title:** View Appointment Calendar
+### Title: View Appointment Calendar
+_As a doctor, I want to view my appointment schedule so that I can stay organized._
 
-_As a doctor, I want to view my appointment calendar so that I can stay organized._
-
-**Acceptance Criteria:**
-1. Doctor logs into dashboard.
-2. System displays calendar view.
-3. Upcoming appointments are visible.
+**Acceptance Criteria**
+1. Doctor dashboard displays appointments.
+2. Appointments show date and patient name.
+3. Doctor can review daily schedule.
 
 **Priority:** High  
-**Story Points:** 4  
-
-**Notes:**
-- Calendar should update dynamically.
-
+**Story Points:** 3
 
 ---
 
-**Title:** Mark Unavailability
+### Title: Mark Unavailability
+_As a doctor, I want to mark unavailable times so that patients only see available slots._
 
-_As a doctor, I want to mark my unavailable time slots so that patients only book available times._
-
-**Acceptance Criteria:**
+**Acceptance Criteria**
 1. Doctor selects unavailable time.
-2. System blocks that slot.
-3. Patients cannot book during that time.
+2. System updates availability.
+3. Patients cannot book that slot.
 
 **Priority:** Medium  
-**Story Points:** 3  
-
-**Notes:**
-- Avoid scheduling conflicts.
-
+**Story Points:** 4
 
 ---
 
-**Title:** Update Doctor Profile
+### Title: Update Profile
+_As a doctor, I want to update my specialization and contact information so that patients have accurate details._
 
-_As a doctor, I want to update my specialization and contact information so that patients have up-to-date details._
-
-**Acceptance Criteria:**
-1. Doctor edits profile information.
-2. Changes are saved in the database.
-3. Updated information is visible to patients.
+**Acceptance Criteria**
+1. Doctor edits profile details.
+2. System saves updates.
+3. Patients see updated information.
 
 **Priority:** Medium  
-**Story Points:** 3  
-
-**Notes:**
-- Validate input fields.
+**Story Points:** 3

@@ -1,42 +1,11 @@
-# Stored Procedures Lab – Final Submission
+Stored Procedures Report – Smart Clinic Management System
 
-## Overview
+This document contains the SQL stored procedures created for the Smart Clinic Management System along with the execution results.
 
-This lab demonstrates the creation and execution of SQL stored procedures for generating reports in the **Clinic Management System (CMS)** database.
+The procedures were created and executed using the MySQL cms database.
 
-The stored procedures automate reporting tasks such as:
-
-* Generating daily appointment reports
-* Identifying the doctor with the most patients in a given month
-* Identifying the doctor with the most patients in a given year
-
-Database used: **MySQL**
-
----
-
-# Database Used
-
-```
-cms
-```
-
-Tables used in the procedures:
-
-* doctor
-* patient
-* appointment
-
----
-
-# Stored Procedure 1
-
-## GetDailyAppointmentReportByDoctor
-
-This procedure generates a daily appointment report grouped by doctor.
-
-### Procedure Definition
-
-```sql
+1. Daily Appointment Report by Doctor
+Stored Procedure
 DELIMITER $$
 
 CREATE PROCEDURE GetDailyAppointmentReportByDoctor(
@@ -54,35 +23,21 @@ BEGIN
     JOIN patient p ON a.patient_id = p.id
     WHERE DATE(a.appointment_time) = report_date
     ORDER BY d.name, a.appointment_time;
-END$$
+END $$
 
 DELIMITER ;
-```
-
-### Execution
-
-```sql
+Execution Command
 CALL GetDailyAppointmentReportByDoctor('2025-04-15');
-```
-
-### Sample Output
-
-| doctor_name     | appointment_time    | status | patient_name | patient_phone |
-| --------------- | ------------------- | ------ | ------------ | ------------- |
-| Dr. Emily Adams | 2025-04-15 09:00:00 | 0      | Jane Doe     | 888-111-1111  |
-| Dr. Emily Adams | 2025-04-15 10:00:00 | 0      | John Smith   | 888-222-2222  |
-
----
-
-# Stored Procedure 2
-
-## GetDoctorWithMostPatientsByMonth
-
-This procedure identifies the doctor who treated the highest number of patients in a specific month and year.
-
-### Procedure Definition
-
-```sql
+Output
++-------------------+----------------------------+--------+----------------+---------------+
+| doctor_name       | appointment_time           | status | patient_name   | patient_phone |
++-------------------+----------------------------+--------+----------------+---------------+
+| Dr. Alice Brown   | 2025-04-15 11:00:00.000000 | 1      | Liam King      | 888-666-6666  |
+| Dr. Mark Johnson  | 2025-04-15 12:00:00.000000 | 1      | Michael Jordan | 888-444-4444  |
+| Dr. Mark Johnson  | 2025-04-15 13:00:00.000000 | 1      | Olivia Moon    | 888-555-5555  |
++-------------------+----------------------------+--------+----------------+---------------+
+2. Doctor With Most Patients By Month
+Stored Procedure
 DELIMITER $$
 
 CREATE PROCEDURE GetDoctorWithMostPatientsByMonth(
@@ -99,34 +54,22 @@ BEGIN
     GROUP BY doctor_id
     ORDER BY patients_seen DESC
     LIMIT 1;
-END$$
+END $$
 
 DELIMITER ;
-```
-
-### Execution
-
-```sql
+Execution Command
 CALL GetDoctorWithMostPatientsByMonth(4, 2025);
-```
-
-### Sample Output
-
+Output
++-----------+---------------+
 | doctor_id | patients_seen |
-| --------- | ------------- |
-| 1         | 12            |
++-----------+---------------+
+| 2         | 31            |
++-----------+---------------+
 
----
+This means Doctor with ID = 2 had the highest number of patients in April 2025.
 
-# Stored Procedure 3
-
-## GetDoctorWithMostPatientsByYear
-
-This procedure identifies the doctor who treated the most patients during a given year.
-
-### Procedure Definition
-
-```sql
+3. Doctor With Most Patients By Year
+Stored Procedure
 DELIMITER $$
 
 CREATE PROCEDURE GetDoctorWithMostPatientsByYear(
@@ -141,48 +84,43 @@ BEGIN
     GROUP BY doctor_id
     ORDER BY patients_seen DESC
     LIMIT 1;
-END$$
+END $$
 
 DELIMITER ;
-```
-
-### Execution
-
-```sql
+Execution Command
 CALL GetDoctorWithMostPatientsByYear(2025);
-```
-
-### Sample Output
-
+Output
++-----------+---------------+
 | doctor_id | patients_seen |
-| --------- | ------------- |
-| 1         | 20            |
++-----------+---------------+
+| 1         | 44            |
++-----------+---------------+
 
----
+This means Doctor with ID = 1 had the highest number of patients in the year 2025.
 
-# SQL Concepts Used
+Stored Procedures Verification
 
-The following SQL concepts were applied in this lab:
+The following command was used to verify the procedures exist in the database:
 
-* Stored Procedures
-* SQL JOIN
-* GROUP BY
-* ORDER BY
-* COUNT() aggregation
-* Input parameters
-* DELIMITER command
-* CALL statement
+SHOW PROCEDURE STATUS WHERE Db = 'cms';
 
----
+Result shows the following procedures:
 
-# Conclusion
+GetDailyAppointmentReportByDoctor
+GetDoctorWithMostPatientsByMonth
+GetDoctorWithMostPatientsByYear
+Conclusion
 
-In this lab, stored procedures were successfully implemented to automate reporting tasks in the Clinic Management System.
+Three stored procedures were successfully created and executed:
 
-These procedures allow:
+GetDailyAppointmentReportByDoctor
 
-* Daily operational reporting
-* Monthly workload analysis
-* Annual performance summaries
+GetDoctorWithMostPatientsByMonth
 
-Stored procedures improve efficiency, reusability, and maintainability of database reporting operations.
+GetDoctorWithMostPatientsByYear
+
+These procedures help generate operational reports for clinic management including daily appointment reports and doctor workload statistics.
+
+Author
+
+Clinic Management System – Database Capstone Lab

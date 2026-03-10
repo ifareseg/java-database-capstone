@@ -3,9 +3,7 @@ import { getPatientAppointments, getPatientData, filterAppointments } from "./se
 const tableBody = document.getElementById("patientTableBody");
 const token = localStorage.getItem("token");
 
-let allAppointments = [];
-let filteredAppointments = [];
-let patientId = null; 
+let patientId = null;
 
 document.addEventListener("DOMContentLoaded", initializePage);
 
@@ -18,8 +16,8 @@ async function initializePage() {
 
     patientId = Number(patient.id);
 
-    const appointmentData = await getPatientAppointments(patientId, token ,"patient") || [];
-    allAppointments = appointmentData.filter(app => app.patientId === patientId);
+    const appointmentData = await getPatientAppointments(patientId, token, "patient");
+    const allAppointments = (appointmentData || []).filter((app) => app.patientId === patientId);
 
     renderAppointments(allAppointments);
   } catch (error) {
@@ -29,26 +27,29 @@ async function initializePage() {
 }
 
 function renderAppointments(appointments) {
-  tableBody.innerHTML = "";
+  if (!tableBody) return;
 
-  const actionTh = document.querySelector("#patientTable thead tr th:last-child");
-  if (actionTh) {
-    actionTh.style.display = "table-cell"; // Always show "Actions" column
-  }
+  tableBody.innerHTML = "";
 
   if (!appointments.length) {
     tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center;">No Appointments Found</td></tr>`;
     return;
   }
 
-  appointments.forEach(appointment => {
+  appointments.forEach((appointment) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${appointment.patientName || "You"}</td>
-      <td>${appointment.doctorName}</td>
-      <td>${appointment.appointmentDate}</td>
-      <td>${appointment.appointmentTimeOnly}</td>
-      <td>${appointment.status == 0 ? `<img src="../assets/images/edit/edit.png" alt="Edit" class="prescription-btn" data-id="${appointment.patientId}">` : "-"}</td>
+      <td>${appointment.doctorName || ""}</td>
+      <td>${appointment.appointmentDate || ""}</td>
+      <td>${appointment.appointmentTimeOnly || ""}</td>
+      <td>
+        ${
+          appointment.status == 0
+            ? `<img src="../assets/images/edit/edit.png" alt="Edit" class="prescription-btn" data-id="${appointment.id}">`
+            : "-"
+        }
+      </td>
     `;
 
     if (appointment.status == 0) {
@@ -61,7 +62,6 @@ function renderAppointments(appointments) {
 }
 
 function redirectToUpdatePage(appointment) {
-  // Prepare the query parameters
   const queryString = new URLSearchParams({
     appointmentId: appointment.id,
     patientId: appointment.patientId,
@@ -69,32 +69,23 @@ function redirectToUpdatePage(appointment) {
     doctorName: appointment.doctorName,
     doctorId: appointment.doctorId,
     appointmentDate: appointment.appointmentDate,
-    appointmentTime: appointment.appointmentTimeOnly,
+    appointmentTime: appointment.appointmentTimeOnly
   }).toString();
 
-  // Redirect to the update page with the query string
-  setTimeout(() => {
-    window.location.href = `/pages/updateAppointment.html?${queryString}`;
-  }, 100);
+  window.location.href = `/pages/updateAppointment.html?${queryString}`;
 }
 
-
-// Search and Filter Listeners
-document.getElementById("searchBar").addEventListener("input", handleFilterChange);
-document.getElementById("appointmentFilter").addEventListener("change", handleFilterChange);
-
 async function handleFilterChange() {
-  const searchBarValue = document.getElementById("searchBar").value.trim();
-  const filterValue = document.getElementById("appointmentFilter").value;
+  const searchBarValue = document.getElementById("searchBar")?.value.trim() || "";
+  const filterValue = document.getElementById("appointmentFilter")?.value || "allAppointments";
 
   const name = searchBarValue || null;
-  const condition = filterValue === "allAppointments"? null : filterValue || null;
+  const condition = filterValue === "allAppointments" ? null : filterValue;
 
   try {
     const response = await filterAppointments(condition, name, token);
     const appointments = response?.appointments || [];
-    filteredAppointments = appointments.filter(app => app.patientId === patientId);
-
+    const filteredAppointments = appointments.filter((app) => app.patientId === patientId);
     renderAppointments(filteredAppointments);
   } catch (error) {
     console.error("Failed to filter appointments:", error);
@@ -102,4 +93,5 @@ async function handleFilterChange() {
   }
 }
 
-  
+document.getElementById("searchBar")?.addEventListener("input", handleFilterChange);
+document.getElementById("appointmentFilter")?.addEventListener("change", handleFilterChange);
