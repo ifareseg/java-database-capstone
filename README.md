@@ -227,7 +227,7 @@ Returns the doctor who treated the most patients in a year.
 
 Running the Application
 1 Clone the repository
-git clone https://github.com/yourusername/java-database-capstone.git
+git clone https://github.com/ifareseg/java-database-capstone.git
 cd java-database-capstone
 2 Start MySQL and MongoDB
 
