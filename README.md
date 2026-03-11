@@ -287,7 +287,3 @@ Author
 
 Capstone Project
 Java Database Development Specialization
-
-License
-
-This project is for educational purposes.
